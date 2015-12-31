@@ -1,8 +1,8 @@
-app.js
+#Unzip compressed file and Convert CSV file to JSON
 
 #Description
 
-After deep RND, We integrated the lot of node modules to create application useful to unzip file and Convert to CSV file to JSON.
+Integrated the lot of node modules to create application useful to unzip file and Convert to CSV file to JSON.
 
 #Modules were used
 
