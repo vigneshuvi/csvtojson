@@ -8,8 +8,9 @@ Integrated the lot of node modules and created Node application, which will help
 
   -   fs
   -   [fstream](https://www.npmjs.com/package/fstream)
+  -   [path](https://www.npmjs.com/package/path)
   -   [babyparse](https://www.npmjs.com/package/babyparse)
-  -   [adm-zip] (https://www.npmjs.com/package/adm-zip)
+  -   [adm-zip](https://www.npmjs.com/package/adm-zip)
 
 #Jobs
 

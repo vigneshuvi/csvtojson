@@ -5,7 +5,8 @@
 var AdmZip = require('adm-zip'),
     fs = require('fs'),
     baby = require("babyparse"),
-    fstream = require('fstream');
+    fstream = require('fstream'),
+    path = require('path');
 
 var zipFile = './files/sample.zip',
     csvFile = './output/sample.CSV',
@@ -13,7 +14,7 @@ var zipFile = './files/sample.zip',
 
 /**
  *
- * CSV TO JSON Object helps to unzip file and convert those files format
+ * CSV TO JSON Object helps to unzip files and convert those files format
  *
  * **/
 var csvToJson = {
@@ -25,9 +26,9 @@ var csvToJson = {
     processStatus : true,
 
     startProcess : function (zipFile, csvFile, unzippedFilePath) {
-        csvToJson.zipFile = zipFile; // Zip file belong file path
-        csvToJson.csvFile = csvFile; // CSV File belong file path
-        csvToJson.unzippedFilePath = unzippedFilePath; // Unizipped file path
+        csvToJson.zipFile = zipFile; // Zip files belong files path
+        csvToJson.csvFile = csvFile; // CSV File belong files path
+        csvToJson.unzippedFilePath = unzippedFilePath; // Unizipped files path
         csvToJson.processStartTime = new Date().getTime(); // Process Start Time
         csvToJson.processStatus = true; // Process status
         csvToJson.unzipProcess();
@@ -63,28 +64,36 @@ var csvToJson = {
         return  new Date().getTime() - startTime;
     },
 
-    // Unzip Process helps to unzip the given file.
+    // Unzip Process helps to unzip the given files.
     unzipProcess : function() {
         csvToJson.formatLog( "info", "Trying to unzip." );
         try {
             csvToJson.setProcessStartTime();
             stats = fs.lstatSync(csvToJson.zipFile);
-            // Check weather file given file is directory or not!!
+            // Check weather files given files is directory or not!!
             if (!stats.isDirectory()) {
                 zip = new AdmZip(csvToJson.zipFile);
                 zipEntries = zip.getEntries();
                 zip.extractAllTo(/*target path*/ csvToJson.unzippedFilePath, /*overwrite*/true);
                 var diff = csvToJson.calculateTimeDifference(csvToJson.processStartTime);
-                csvToJson.formatLog( "info", "For file unzip time taken is " +diff+" milliseconds." );
-                csvToJson.parseCSVtoJSON(csvToJson.csvFile);
+                csvToJson.formatLog( "info", "For files unzip time taken is " +diff+" milliseconds." );
+                fs.readdir(csvToJson.unzippedFilePath, function(err, items) {
+                    for (var i=0; i<items.length; i++) {
+                        var generateCSVpath = csvToJson.unzippedFilePath +"/"+items[i];
+                        var fileExt = path.extname(generateCSVpath);
+                        if( fileExt === ".CSV" || fileExt === ".csv"  ) {
+                            csvToJson.parseCSVtoJSON(generateCSVpath);
+                        }
+                    }
+                });
 
             }
         } catch( except ) {
-            console.log( 'Error occered whil unzip file ', except );
+            console.log( 'Error occered whil unzip files ', except );
         }
     },
 
-    // Parse CSV file to JSON using Baby Parse and customize column headers.
+    // Parse CSV files to JSON using Baby Parse and customize column headers.
     parseCSVtoJSON : function( csvFile ) {
         csvstats = fs.lstatSync(csvFile);
         // Is it a directory?
@@ -95,7 +104,7 @@ var csvToJson = {
                 var file = fs.readFileSync(csvFile, {encoding: "UTF-8"});
                 var count = 0;
 
-                // command to parse CSV file
+                // command to parse CSV files
                 baby.parse(file, {
                     delimiter: "",	// auto-detect
                     newline: "",	// auto-detect
@@ -116,7 +125,7 @@ var csvToJson = {
                     }
                 });
             } catch ( err ) {
-                console.log( 'Error occered whil unzip file ', err );
+                console.log( 'Error occered whil unzip files ', err );
             }
         }
     }
