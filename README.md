@@ -21,7 +21,7 @@ After deep RND, We integrated the lot of node modules to create application usef
 #Environment set
 
   -   Clone this project  
-  -   Install node modules with help of Package.json
+  -   Install node modules with help of [package.json](https://github.com/vigneshuvi/csvtojson/blob/master/package.json)
       [npm](http://npmjs.org) do:
         $ npm install
   -   Run [app.js](https://github.com/vigneshuvi/csvtojson/blob/master/app.js)

@@ -1,5 +1,5 @@
 /**
- * Created by QBurst on 12/31/15.
+ * Created by Vignesh on 12/31/15.
  */
 
 var AdmZip = require('adm-zip'),
@@ -94,14 +94,12 @@ var csvToJson = {
             try {
                 var file = fs.readFileSync(csvFile, {encoding: "UTF-8"});
                 var count = 0;
-                var dynamicHeader = ["test1","test2","test3","test4","test5"];
 
                 // command to parse CSV file
                 baby.parse(file, {
                     delimiter: "",	// auto-detect
                     newline: "",	// auto-detect
                     header: true,
-                    headerFields: dynamicHeader,
                     dynamicTyping: false,
                     skipEmptyLines: true,
                     fastMode: true,
