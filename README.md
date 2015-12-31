@@ -28,5 +28,10 @@ Integrated the lot of node modules and created Node application, which will help
   -   Run [app.js](https://github.com/vigneshuvi/csvtojson/blob/master/app.js)
         $ node app.js
 
+#Simple way to setup Node Enviroment by run shell script
+
+  -  Run shell script [start.sh](https://github.com/vigneshuvi/csvtojson/blob/master/start.sh)
+        $ bash start.sh 
+
 Created by [Vignesh](http://vigneshuvi.github.io/).
 
