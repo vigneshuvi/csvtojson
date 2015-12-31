@@ -27,5 +27,5 @@ Integrated the lot of node modules and created Node application, which will help
   -   Run [app.js](https://github.com/vigneshuvi/csvtojson/blob/master/app.js)
         $ node app.js
 
-Created by Vignesh.
+Created by [Vignesh](http://vigneshuvi.github.io/).
 
