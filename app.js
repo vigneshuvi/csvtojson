@@ -7,9 +7,9 @@ var AdmZip = require('adm-zip'),
     baby = require("babyparse"),
     fstream = require('fstream');
 
-var zipFile = './files/MASTER_102383_20151209080520133.zip',
-    csvFile = './unzipped_files/ITEM_M_102383_20151209080520133test.CSV',
-    unzippedFilePath = './unzipped_files';
+var zipFile = './files/sample.zip',
+    csvFile = './output/sample.CSV',
+    unzippedFilePath = './output';
 
 /**
  *
