@@ -4,6 +4,7 @@
   "description": "After deep RND, We integrated the lot of node modules to create application useful to unzip file and Convert to CSV file to JSON.",
   "main": "app.js",
   "dependencies": {
+    "adm-zip" : "~",
     "arguments-extended": "~0.0.3",
     "array-extended": "~0.0.11",
     "aws-sdk": "~2.2.26",

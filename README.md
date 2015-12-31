@@ -2,7 +2,7 @@
 
 #Description
 
-Integrated the lot of node modules to create application useful to unzip file and Convert to CSV file to JSON.
+Integrated the lot of node modules and created Node application, which will helpful to Unzip file and Convert to CSV file to JSON format.
 
 #Modules were used
 
