@@ -33,5 +33,15 @@ Integrated the lot of node modules and created Node application, which will help
   -  Run shell script [start.sh](https://github.com/vigneshuvi/csvtojson/blob/master/start.sh)
         $ bash start.sh 
 
-Created by [Vignesh](http://vigneshuvi.github.io/).
+___
+
+#### Do you like it?
+
+Do you like this repo? Share it on Twitter, Facebook, Google+ or anywhere you like so that more of us can use it and help. Thanks!
+
+Created by [Vignesh](http://vigneshuvi.github.io/) 
+
+![alt text][logo]
+
+[logo]: https://github.com/vigneshuvi/vigneshuvi.github.io/blob/master/favicon.ico/android-icon-48x48.png 
 
